@@ -5,4 +5,5 @@ public interface WheeledVehicle {
 	public void setGear(int newGear);
 	public void setSeats(int seats);
 	public void brakes(boolean braking);
+	public void printStatus();
 }
