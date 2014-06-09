@@ -2,12 +2,12 @@ package arrays;
 
 public class MoreMultiDimArrays {
 
-	static int rowNumber = 12;
-	static int columnNumber = 15;
+	static int rows = 12;
+	static int columns = 15;
 	
 	public static void main(String[] args) {
 		int[][] multiplicationTable;
-		multiplicationTable = new int[rowNumber][columnNumber];
+		multiplicationTable = new int[rows][columns];
 		
 		int[][] newMultiplicationTable = {{1, 2, 3, 4, 5}, {2, 4, 6, 8, 10}, {3, 6, 9, 12, 15},
 											{4, 8, 12, 16, 20}, {5, 10, 15, 20, 25}};
