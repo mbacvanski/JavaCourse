@@ -15,6 +15,7 @@ public class CopyingArrays {
 		//2: where to start copying from in copyFrom
 		//0: where to start pasting in copyTo
 		//7: where to end copying from in copyFrom
+		System.out.println(new String(copyFrom));
 		System.out.println(new String(copyTo));
 		//Way to print out the elements of the array
 	}
