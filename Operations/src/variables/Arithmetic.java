@@ -14,6 +14,7 @@ public class Arithmetic {
 		difference = 70 - 42;
 		product = 70 * 42;
 		quotient = 70.0 / 42.0;
+		//Must use doubles in division (70.0 & 42.0) to get double result
 		modulo = 70 % 42;
 		jeeb = "Hello " + "World!";
 		//Do operations on the variables
