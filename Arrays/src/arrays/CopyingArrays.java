@@ -9,6 +9,7 @@ public class CopyingArrays {
 		//Create an empty array
 		
 		System.arraycopy(copyFrom, 2, copyTo, 0, 7);
+		//Copies items from one array to another!!!
 		//copyFrom: which array to copy from
 		//copyTo: which array to paste into
 		//2: where to start copying from in copyFrom
