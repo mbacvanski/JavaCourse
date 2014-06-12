@@ -16,9 +16,11 @@ public class Unary {
 		//Demonstrate positive and negative
 		originalNum = 42;
 		unaryIncrement = ++originalNum;
+		//++ is before originalNum so that it is evaluated before it is assigned to unaryIncrement
 		//Demonstrate increments
 		originalNum = 42;
 		unaryDecrement = --originalNum;
+		//-- is before originalNum so that it is evaluated before it is assigned to unaryDecrement
 		//Demonstrate decrements
 		unaryOriginal = true;
 		unaryComplement = !unaryOriginal;
