@@ -25,7 +25,7 @@ public class IfThenStatements {
 			System.out.println("The third boolean is true!");
 		}
 		else {
-			System.out.println("Something was wrong...");
+			System.err.println("Something was wrong...");
 		}
 	}
 
