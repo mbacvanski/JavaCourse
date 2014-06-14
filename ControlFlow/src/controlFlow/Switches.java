@@ -33,6 +33,7 @@ public class Switches {
 			case 11: {monthString = NOVEMBER; break;}
 			case 12: {monthString = DECEMBER; break;}
 			default: {monthString = INVALID_MONTH; break;}
+			//Case statements!
 		}
 		System.out.println(monthString);
 	}
