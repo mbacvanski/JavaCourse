@@ -17,7 +17,7 @@ public class Switches {
 	private static final String AUGUST = "August";
 
 	public static void main(String[] args) {
-		int month = 42;
+		int month = 6;
 		String monthString;
 		switch(month) {
 			case 1: {monthString = JANUARY; break;}
