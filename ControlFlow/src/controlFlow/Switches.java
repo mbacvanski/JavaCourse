@@ -35,7 +35,7 @@ public class Switches {
 			default: {monthString = INVALID_MONTH; break;}
 			//Case statements!
 		}
-		System.out.println(monthString);
+		System.out.println("The " + month + "th month in the year is " + monthString);
 	}
 
 }
