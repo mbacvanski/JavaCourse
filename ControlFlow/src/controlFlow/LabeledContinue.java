@@ -4,7 +4,7 @@ public class LabeledContinue {
 
 	public static void main(String[] args) {
 		String searchThis = "These fuzzy chukars are nice and puffy.";
-		String searchWhat = "zed";
+		String searchWhat = "chu";
 		String currentSubstring = "";
 		boolean foundYet = false;
 		int length = searchThis.length();
@@ -12,12 +12,11 @@ public class LabeledContinue {
 		
 		
 	test:
-		for (int i = 0; i < length - 1; i++) {
+		for (int i = 0; i <= length - subLength; i++) {
 			currentSubstring = searchThis.substring(i, i + subLength).toLowerCase();
 			if (currentSubstring.equals(searchWhat)) {
 				foundYet = true;
 				break test;
-				
 			} 
 			else {
 				continue test;
