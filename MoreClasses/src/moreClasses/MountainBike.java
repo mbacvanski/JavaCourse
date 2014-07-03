@@ -1,12 +1,11 @@
 package moreClasses;
 
 public class MountainBike extends Bicycle { //Is a subclass of Bicycle!!!!!!!!!!
-	public int seatHeight;
+	public int seatHeight; //Member Variable (field)
 
 	public MountainBike(int startCadence, int startGear, int startSpeed, int seatHeight) {
-		super(startCadence, startGear, startSpeed);
+		super(startCadence, startGear, startSpeed); //Parameters
 		this.seatHeight = seatHeight;
-		// TODO Auto-generated constructor stub
 	}
 
 	public int getSeatHeight() {
