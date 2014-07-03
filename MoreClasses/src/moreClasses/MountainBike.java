@@ -1,6 +1,6 @@
 package moreClasses;
 
-public class MountainBike extends Bicycle{
+public class MountainBike extends Bicycle { //Is a subclass of Bicycle!!!!!!!!!!
 	public int seatHeight;
 
 	public MountainBike(int startCadence, int startGear, int startSpeed, int seatHeight) {
