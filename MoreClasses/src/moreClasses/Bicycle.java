@@ -8,10 +8,16 @@ public class Bicycle {
 	public int speed;
 	
 	//Constructor!
-	public Bicycle(int startCadence, int startGear, int startSpeed) {
-		cadence = startCadence;
-		gear = startGear;
-		speed = startSpeed;
+	public Bicycle(int cadence, int gear, int speed) {
+		this.cadence = cadence;
+		this.gear = gear;
+		this.speed = speed;
+	}
+	
+	public Bicycle() {
+		cadence = 0;
+		gear = 0;
+		speed = 0;
 	}
 	
 	//Getters and Setter methods!
@@ -31,8 +37,8 @@ public class Bicycle {
 		this.speed = speed;
 	}
 
-	public void SetGear(int gear) {
-		this.gear = gear;
+	public void setCadence(int cadence) {
+		this.cadence = cadence;
 	}
 
 	public int getCadence() {
