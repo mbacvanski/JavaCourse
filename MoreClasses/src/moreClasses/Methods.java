@@ -12,7 +12,7 @@ public class Methods {
 		printer(new Bicycle(), new Random());
 	}
 	
-	private static void printer(Object... args) {
+	private static void printer(Object... args) { //VARARGS!!!
 		PrintStream print = new PrintStream(System.out);
 		for (Object o : args) {
 			String printed = o.toString();
