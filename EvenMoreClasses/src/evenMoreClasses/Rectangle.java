@@ -8,11 +8,11 @@ public class Rectangle {
 	private int z;
 	
 	public Rectangle() {
-		this(1, 1); //In-class constructor call
+		this(1, 1); //Explicit constructor invocation
 	}
 	
 	public Rectangle(int length, int width) {
-		this(length, width, 0, 0, 0); //In-class constructor call
+		this(length, width, 0, 0, 0); //Explicit constructor invocation
 	}
 	
 	public Rectangle(int length, int width, int x, int y, int z) {
