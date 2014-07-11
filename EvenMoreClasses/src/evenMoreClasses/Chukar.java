@@ -1,7 +1,11 @@
 package evenMoreClasses;
 
+import java.util.ArrayList;
+
 public class Chukar {
+	//Static fields
 	public static int numberOfChukars;
+	public static ArrayList<Chukar> chukars = new ArrayList<Chukar>();
 	private String name;
 	
 	private Chukar(String name) {
@@ -12,6 +16,8 @@ public class Chukar {
 	
 	public static Chukar hatch(String name) {
 		Chukar newChukar = new Chukar(name);
+		numberOfChukars ++;
+		chukars.add(newChukar);
 		return newChukar;
 	}
 	
