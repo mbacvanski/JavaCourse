@@ -28,4 +28,22 @@ public class Chukar {
 	public String getName() {
 		return name;
 	}
+	
+	public static String getChukars() {
+		String chukarString = "";
+		int chukarSize = chukars.size();
+		for (int i = 0; i < chukarSize; i++) {
+			Chukar c = chukars.get(i);
+			if (i == chukarSize - 2) {
+				chukarString = chukarString + c.getName() + " & ";
+			}
+			else if (i == chukarSize - 1) {
+				chukarString = chukarString + c.getName();
+			}
+			else {
+				chukarString = chukarString + c.getName() + ", ";
+			}
+		}
+		return chukarString;
+	}
 }
