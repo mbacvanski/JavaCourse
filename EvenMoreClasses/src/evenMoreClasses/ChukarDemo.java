@@ -11,7 +11,11 @@ public class ChukarDemo {
 		Chukar jeeb = Chukar.hatch("Jeeb");
 		System.out.println("Another chukar just hatched; his name is Jeeb.");
 		System.out.println("There are now " + Chukar.numberOfChukars + " chukars in the world!");
-		System.out.println("Their names are " + Chukar.chukars.toString());
+		System.out.println("Their names are " + Chukar.getChukars());
+		Chukar joob = Chukar.hatch("Joob");
+		System.out.println("Another chukar just hatched; his name is Joob.");
+		System.out.println("There are now " + Chukar.numberOfChukars + " chukars in the world!");
+		System.out.println("Their names are " + Chukar.getChukars());
 	}
 
 }
