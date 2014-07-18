@@ -14,6 +14,10 @@ public class Graph {
 		private ArrayList<Node> connections = new ArrayList<>();
 		private String name = "";
 		
+		/**
+		 * @param name of the node to create
+		 * @param connections of the node to create
+		 */
 		public Node(String name, ArrayList<Node> connections) {
 			
 			boolean found = false;
@@ -29,27 +33,43 @@ public class Graph {
 						this.name = name;
 					}
 				}
+				break;
 			}
 				
 		}
 		
+		/**
+		 * @return an ArrayList containing the nodes that the node is connected to
+		 */
 		public ArrayList<Node> getConnections() {
 			return connections;
 		}
 		
+		/**
+		 * @param an ArrayList of the connections of the node to be set
+		 */
 		public void setConnections(ArrayList<Node> connections) {
 			this.connections = connections;
 			Collections.sort(connections);
 		}
 		
+		/**
+		 * @param a node to add a connection to
+		 */
 		public void addConnection(Node node) {
 			connections.add(node);
 		}
 		
+		/**
+		 * @param new name for the node
+		 */
 		public void setName(String name) {
 			this.name = name;
 		}
 		
+		/**
+		 * @return the name of the node
+		 */
 		public String getName() {
 			return name;
 		}
@@ -60,6 +80,9 @@ public class Graph {
 		}
 	}
 	
+	/**
+	 * @return ArrayList of Strings of all the names of nodes
+	 */
 	public ArrayList<String> getNodeNames() {
 		ArrayList<String> names = new ArrayList<>();
 		for (Node n : nodes) {
@@ -68,20 +91,34 @@ public class Graph {
 		return names;
 	}	
 
+	/**
+	 * @param a String of the name of the node 
+	 * @return an ArrayList of connections of the node.  If no connections are found, it returns null.
+	 */
 	public ArrayList<String> getConnections(String name) {
 		ArrayList<String> connections = new ArrayList<>();
 		
 		if (hasNode(name)) {
 			Node node = findNode(name);
-			for (Node n : node.connections) {
-				connections.add(n.name);
+			ArrayList<Node> connectionsOfNode = node.getConnections();
+			if (connectionsOfNode != (null)) {
+				for (Node n : connectionsOfNode) {
+					connections.add(n.name);
+				}
+			}
+			else {
+				return null;
 			}
 		}
 		
 		return connections;
 	}
 	
-	public ArrayList<Node> findNode(ArrayList<Node> connections) {
+	/**
+	 * @param connections of the nodes to find
+	 * @return ArrayList of the nodes that have such connections
+	 */
+	private ArrayList<Node> findNode(ArrayList<Node> connections) {
 		ArrayList<Node> nodesThatMatch = new ArrayList<>();
 		for (Node n : nodes) {
 			if (n.connections.equals(connections)) {
@@ -91,7 +128,11 @@ public class Graph {
 		return nodesThatMatch;
 	}
 	
-	public Node findNode(String name) {
+	/**
+	 * @param name of the node to be searched for
+	 * @return the node that was found
+	 */
+	private Node findNode(String name) {
 		Node node = null;
 		
 		for (Node n : nodes) {
@@ -103,6 +144,10 @@ public class Graph {
 		return node;
 	}
 	
+	/**
+	 * @param name of the node
+	 * @return boolean of if the node was found or not
+	 */
 	public boolean hasNode(String name) {
 		boolean found = false;
 
@@ -115,6 +160,10 @@ public class Graph {
 		return found;
 	}
 	
+	/**
+	 * @param connections of the nodes to be found
+	 * @return boolean of if any nodes have such connections
+	 */
 	public boolean hasNode(ArrayList<Node> connections) {
 		boolean found = false;
 
@@ -127,6 +176,10 @@ public class Graph {
 		return found;
 	}
 
+	/**
+	 * @param name of the new node
+	 * @param connections of the new node
+	 */
 	public void addNode(String name, ArrayList<String> connections) {
 		ArrayList<Node> possibleConnections = new ArrayList<>();
 		for (String s : connections) {
@@ -146,6 +199,9 @@ public class Graph {
 		
 	}
 
+	/**
+	 * @param name of the node to be created
+	 */
 	public void addNode(String name) {
 		if (!hasNode(name)) {
 			Node node = new Node(name, null);
@@ -153,6 +209,10 @@ public class Graph {
 		}
 	}
 
+	/**
+	 * @param nodeA to make a connection to nodeB
+	 * @param nodeB to make a connection to nodeA
+	 */
 	public void makeConnection(String nodeA, String nodeB) {
 		if (hasNode(nodeA) && hasNode(nodeB)) {
 			Node a = findNode(nodeA);
