@@ -1,6 +1,5 @@
 package graph;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -12,7 +11,7 @@ public class Graph {
 	
 	private class Node implements Comparable<Node> {
 		private ArrayList<Node> connections = new ArrayList<>();
-		private String name = "";
+		private String name;
 		
 		/**
 		 * @param name of the node to create
@@ -36,6 +35,13 @@ public class Graph {
 				break;
 			}
 				
+		}
+		
+		public Node(String name) {
+			
+			if (!hasNode(name)) {
+				this.name = name;
+			}
 		}
 		
 		/**
@@ -151,12 +157,18 @@ public class Graph {
 	public boolean hasNode(String name) {
 		boolean found = false;
 
-		for (Node n : nodes) {
-			if (n.name.toLowerCase().equals(name.toLowerCase())) {
-				found = true;
-				break;
+		int size = nodes.size();
+		if (size != 0) {
+			for (Node n : nodes) {
+				String lookingAtName = n.getName().toLowerCase();
+				String comparingName = name.toLowerCase();
+				if (lookingAtName.equals(comparingName)) {
+					found = true;
+					break;
+				}
 			}
 		}
+		
 		return found;
 	}
 	
@@ -164,7 +176,7 @@ public class Graph {
 	 * @param connections of the nodes to be found
 	 * @return boolean of if any nodes have such connections
 	 */
-	public boolean hasNode(ArrayList<Node> connections) {
+	private boolean hasNode(ArrayList<Node> connections) {
 		boolean found = false;
 
 		for (Node n : nodes) {
@@ -183,7 +195,7 @@ public class Graph {
 	public void addNode(String name, ArrayList<String> connections) {
 		ArrayList<Node> possibleConnections = new ArrayList<>();
 		for (String s : connections) {
-			if (hasNode(s)) {
+			if (!hasNode(s)) {
 				Node n = findNode(s);
 				possibleConnections.add(n);
 			}
@@ -204,7 +216,7 @@ public class Graph {
 	 */
 	public void addNode(String name) {
 		if (!hasNode(name)) {
-			Node node = new Node(name, null);
+			Node node = new Node(name);
 			nodes.add(node);
 		}
 	}
@@ -214,7 +226,7 @@ public class Graph {
 	 * @param nodeB to make a connection to nodeA
 	 */
 	public void makeConnection(String nodeA, String nodeB) {
-		if (hasNode(nodeA) && hasNode(nodeB)) {
+		if (hasNode(nodeA) || hasNode(nodeB)) {
 			Node a = findNode(nodeA);
 			Node b = findNode(nodeB);
 			a.addConnection(b);
