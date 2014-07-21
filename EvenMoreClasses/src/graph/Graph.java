@@ -176,16 +176,38 @@ public class Graph {
 	 * @param connections of the nodes to be found
 	 * @return boolean of if any nodes have such connections
 	 */
-	private boolean hasNode(ArrayList<Node> connections) {
+	private boolean hasNodeInternal(ArrayList<Node> connections) {
 		boolean found = false;
+		Collections.sort(connections);
 
 		for (Node n : nodes) {
+			Collections.sort(n.connections);
 			if (n.connections.equals(connections)) {
 				found = true;
 				break;
 			}
 		}
 		return found;
+	}
+	
+	public boolean hasNode(ArrayList<String> connections) {
+		ArrayList<Node> possibleConnectionsToSearch = new ArrayList<>();
+
+		boolean found = false;
+		boolean ok = true;
+		
+		for (String name : connections) {
+			if (hasNode(name)) {
+				Node n = findNode(name);
+				possibleConnectionsToSearch.add(n);
+			}
+			else {
+				ok = false;
+				break;
+			}
+		}
+		
+		return hasNodeInternal(possibleConnectionsToSearch);
 	}
 
 	/**
