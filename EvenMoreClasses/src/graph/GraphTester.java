@@ -28,6 +28,19 @@ public class GraphTester {
 		System.out.println("Android's connections: " + graph.getConnections(ANDROID));
 		System.out.println("Chukar's connections: " + graph.getConnections(CHUKAR));
 		System.out.println("Piggy's connections: " + graph.getConnections(PIGGY));
+		ArrayList<String> connections = new ArrayList<>();
+		connections.add(CHUKAR);
+		connections.add(PIGGY);
+		connections.add(ANDROID);
+		ArrayList<String> connections2 = new ArrayList<>();
+		connections2.add("Gurgle");
+		connections2.add(CHUKAR);
+		connections2.add(PIGGY);
+		connections2.add(ANDROID);
+		
+		
+		System.out.println("Does anyone have connections to Chukar, Piggy, and Android? " + graph.hasNode(connections));
+		System.out.println("Does anyone have connections to Chukar, Piggy, Android, and Gurgle? " + graph.hasNode(connections2));
 	}
 
 }
