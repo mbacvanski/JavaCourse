@@ -195,7 +195,7 @@ public class Graph {
 	public void addNode(String name, ArrayList<String> connections) {
 		ArrayList<Node> possibleConnections = new ArrayList<>();
 		for (String s : connections) {
-			if (!hasNode(s)) {
+			if (hasNode(s)) {
 				Node n = findNode(s);
 				possibleConnections.add(n);
 			}
