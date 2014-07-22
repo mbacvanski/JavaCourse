@@ -37,10 +37,11 @@ public class GraphTester {
 		connections2.add(CHUKAR);
 		connections2.add(PIGGY);
 		connections2.add(ANDROID);
-		
-		
+		ArrayList<String> connections3 = new ArrayList<>();
+		connections3.add(CHUKAR);
 		System.out.println("Does anyone have connections to Chukar, Piggy, and Android? " + graph.hasNode(connections));
 		System.out.println("Does anyone have connections to Chukar, Piggy, Android, and Gurgle? " + graph.hasNode(connections2));
+		System.out.println("Does anyone have connections to Chukar alone?" + graph.hasNode(connections3));
 	}
 
 }
