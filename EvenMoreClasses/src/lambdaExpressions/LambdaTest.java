@@ -16,13 +16,19 @@ public class LambdaTest {
 	}
 	
 	public static void main(String[] args) {
+		
 		//Get the people who are over 4 years, less than 22, and are male.
+		
 		System.out.println(printPeople(people, (Person p) -> p.getAge() > 4
 				&& p.getAge() < 22
 				&& p.getGender().toLowerCase().equals("male")));
+		
 		//Get the person whose name is Twee
+		
 		System.out.println(printPeople(people, (Person p) -> p.getName().equals("Twee")));
+		
 		//Get the people who are male
+		
 		ArrayList<Person> males = findPeople(people, (Person p) -> p.getGender().equals("male"));
 		String peopleList = "";
 		for (Person p : males) {
@@ -30,7 +36,9 @@ public class LambdaTest {
 		}
 		System.out.println("Here are the male people:");
 		System.out.println(peopleList);
+		
 		//Get the people who are chukans.
+		
 		ArrayList<Person> chukans = findPeople(people, (Person p) -> p.getGender().equals("chukan"));
 		String chukanList = "";
 		for (Person p : chukans) {
@@ -38,7 +46,9 @@ public class LambdaTest {
 		}
 		System.out.println("Here are the chukan people:");
 		System.out.println(chukanList);
+		
 		///////////////////////
+		
 		ArrayList<Person> peopleOverTwoYears = findPeople(people, (Person p) -> p.getAge() > 2);
 		String peopleOverTwoYearsList = "";
 		for (Person p : peopleOverTwoYears) {
