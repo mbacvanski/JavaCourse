@@ -31,4 +31,28 @@ public class Person {
 		this.gender = gender;
 	}
 
+	public int compareByAge(Person p) {
+
+		if (this.age < p.getAge()) {
+			return -1;
+		}
+		else if (this.age == p.getAge()) {
+			return 0;
+		}
+		else {
+			return 1;
+		}
+	}
+	
+	public int compareByNameLength(Person p) {
+		if (this.name.length() < p.name.length()) {
+			return -1;
+		}
+		else if (this.name.length() == p.name.length()) {
+			return 0;
+		}
+		else {
+			return 1;
+		}
+	}
 }
