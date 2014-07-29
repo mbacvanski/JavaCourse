@@ -25,6 +25,7 @@ public class PeopleTesting {
 		
 		people.add(new Person("Chukar", 3, "chukan"));
 		
+		//Reference to instance method of an arbitrary object of a particular type.
 		people.sort(Person::compareByAge);
 		
 		System.out.println("Sorting by name:");
@@ -36,6 +37,7 @@ public class PeopleTesting {
 		
 		System.out.println("-------------------------------------------");
 		
+		//Reference to instance method of an arbitrary object of a particular type.
 		people.sort(Person::compareByNameLength);
 		
 		System.out.println("Sorting by name length:");
