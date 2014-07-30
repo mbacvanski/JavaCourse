@@ -9,12 +9,11 @@ public class EnumTest {
 	}
 	
 	public static void main(String[] args) {
-		
-		
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter a day of the week: ");
 		String scanned = scan.nextLine().toUpperCase();
 		String day = "";
+		
 		if (enumContains(scanned)) {
 			System.out.println("The day of the week has been saved!");
 			day = scanned;
@@ -22,15 +21,17 @@ public class EnumTest {
 		else {
 			System.out.println("The day that you entered is not valid.");
 		}
+		
 		System.out.println("The day that you entered was: " + day);
 		
 		scan.close();
 	}
 	
 	private static boolean enumContains(String s) {
-		Day[] daysHere = Day.values();
+		Day[] daysHere = Day.values(); //This creates an array of Day
 		boolean contains = false;
 		
+		//Search for String s in Day
 		for (Day d : daysHere) {
 			if (d.name().equals(s)) {
 				contains = true;
