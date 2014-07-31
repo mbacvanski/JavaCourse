@@ -25,4 +25,8 @@ public class Chukar {
 		this.age = age;
 	}
 	
+	public String toString() {
+		return "Name: " + name + " | Age: " + age;
+	}
+	
 }
