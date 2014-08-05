@@ -28,4 +28,14 @@ public class SoRelatableTumblr implements OMGSoRelatable {
 			return -1;
 		}
 	}
+	
+	@Override
+	public boolean isItRelatable() {
+		if (getRelatabilityIndex() > 0) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
 }
