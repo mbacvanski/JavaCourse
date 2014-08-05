@@ -1,5 +1,9 @@
 package omgSoRelatable;
-
+/**
+ * 
+ * @author marc
+ *
+ */
 public class SoRelatableTumblr implements OMGSoRelatable {
 	
 	private int relatabilityIndex;
